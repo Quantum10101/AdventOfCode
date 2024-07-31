@@ -39,6 +39,7 @@ export class cmd {
 	};
 	
 	static text = {
+		RESET: "\x1B[0m",
 		BOLD: "\x1B[1m",
 		END_BOLD: "\x1B[22m",
 		UNDERLINE: "\x1B[4m",

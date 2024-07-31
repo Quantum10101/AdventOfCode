@@ -1,6 +1,5 @@
 import eaz from "eaz-utils";
 import readlineSync from "readline-sync";
-import { $ } from "bun";
 import { cmd } from "../lib/cmd.ts";
 import { MenuAction } from "../lib/MenuAction.ts";
 
@@ -14,12 +13,37 @@ export class RunPuzzle extends MenuAction {
 		
 		const year = data["year"];
 		const day = data["day"];
+		const sessionCookie = process.env.AOC_SESSION_COOKIE;
 		
-		const files = eaz.fileSystem.listOf.files(`../solutions/${year}/day${day}`).sort();
+		const cacheFiles = eaz.fileSystem.listOf.files(`../solutions/${year}/day${day}`).filter(x => x.endsWith(".cache"));
 		
-		for (const file of files) {
-			const { stdout } = Bun.spawn(["bun", "run", `solutions/${year}/day${day}/${file}`]);
-			console.log(await Bun.readableStreamToText(stdout));
+		if (cacheFiles.includes("data.cache") === false) {
+			const response = await fetch(`https://adventofcode.com/${year}/day/${day}/input`, {
+				headers: {
+					"Cookie": `session=${sessionCookie}`
+				}
+			});
+			
+			if (response.ok) {
+				const data = await response.text();
+				const pwd = eaz.fileSystem.pathToScript.directory();
+				await Bun.write(`${pwd}/../solutions/${year}/day${day}/data.cache`, data);
+				cacheFiles.push("data.cache");
+			}
+		}
+		
+		const codeFiles = eaz.fileSystem.listOf
+			.files(`../solutions/${year}/day${day}`)
+			.filter(x => x.endsWith(".ts"))
+			.sort();
+		
+		for (const codeFile of codeFiles) {
+			console.log(`${cmd.color.YELLOW}${cmd.text.BOLD}${cmd.text.UNDERLINE}${codeFile}${cmd.text.RESET}\n`);
+			for (const cacheFile of cacheFiles) {
+				console.log(`${cmd.color.WHITE_DARK}${cmd.text.ITALICS}${cacheFile}${cmd.text.RESET}`);
+				const { stdout } = Bun.spawn(["bun", "run", `solutions/${year}/day${day}/${codeFile}`, cacheFile]);
+				console.log(await Bun.readableStreamToText(stdout));
+			}
 		}
 		
 		process.stdout.write("Press ENTER to continue.");
