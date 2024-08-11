@@ -12,6 +12,8 @@ Advent of Code has an interesting competitive element to it. The puzzle is relea
 
 [Day 1: Not Quite Lisp](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day1) (Part 1 - 00:02:10) (Part 2 - 00:01:43)
 
+[Day 2: I Was Told There Would Be No Math](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day2) (Part 1 - 00:17:04) (Part 2 - 00:10:50)
+
 ## MIT License
 
 Copyright 2024 Quantum10101
