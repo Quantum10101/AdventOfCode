@@ -4,15 +4,15 @@ Advent of Code is a series of programming puzzles that are presented at the begi
 
 I am sharing my personal solutions here on GitHub for future reference and for anyone who might be interested. The language of choice for these solutions is TypeScript using the Bun runtime. I have integrated my [BunOps](https://github.com/Quantum10101/BunOps) console menu project as a nifty way to run the puzzle solutions and I make heavy use of my [eaz-utils](https://www.npmjs.com/package/eaz-utils) library throughout.
 
-Advent of Code has an interesting competitive element to it. The puzzle is released to the public at exactly midnight EST each day. Their system keeps track of how fast everyone submits results and compares participants on leaderboards. Since I can't go back and participate in older competitions in real time, I use a stopwatch to measure my speed and report my times below (hh:mm:ss). I pause time for breaks, especailly for harder puzzles that span multiple days. It will be interesting to see how much faster I get as I work through them over time.
+Advent of Code has an interesting competitive element to it. The puzzle is released to the public at exactly midnight EST each day. Their system keeps track of how fast everyone submits results and compares participants on leaderboards. Since I can't go back and participate in older competitions in real time, I use a stopwatch to measure my speed and report my times below (part1 / part2) in hh:mm:ss format. I pause time for breaks, especailly for harder puzzles that span multiple days. It will be interesting to see how much faster I get as I work through them over time.
 
 ## Solutions
 
 ### 2015
 
-[Day 1: Not Quite Lisp](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day1) (Part 1 - 00:02:10) (Part 2 - 00:01:43)
+[Day 1: Not Quite Lisp](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day1) (00:02:10 / 00:01:43)
 
-[Day 2: I Was Told There Would Be No Math](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day2) (Part 1 - 00:17:04) (Part 2 - 00:10:50)
+[Day 2: I Was Told There Would Be No Math](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day2) (00:17:04 / 00:10:50)
 
 ## MIT License
 
