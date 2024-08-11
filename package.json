@@ -10,7 +10,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "eaz-utils": "^0.8.1",
+    "eaz-utils": "^0.9.0",
     "readline-sync": "^1.4.10"
   }
 }

@@ -32,6 +32,12 @@ export class RunPuzzle extends MenuAction {
 			}
 		}
 		
+		const indexToForeground = cacheFiles.indexOf("data.cache");
+		if (indexToForeground > 0) {
+			cacheFiles.splice(indexToForeground, 1);
+			cacheFiles.unshift("data.cache");
+		}
+		
 		const codeFiles = eaz.fileSystem.listOf
 			.files(`../solutions/${year}/day${day}`)
 			.filter(x => x.endsWith(".ts"))
