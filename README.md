@@ -10,7 +10,7 @@ Advent of Code has an interesting competitive element to it. The puzzle is relea
 
 ### 2015
 
-Day 1: Not Quite Lisp (Part 1 - 00:00:00) (Part 2 - 00:00:00)
+[Day 1: Not Quite Lisp](https://github.com/Quantum10101/AdventOfCode/tree/main/solutions/2015/day1) (Part 1 - 00:02:10) (Part 2 - 00:01:43)
 
 ## MIT License
 
